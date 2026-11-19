@@ -1,0 +1,1438 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>挠脚心magic_品牌官方门户|原创影像内容生态</title>
+<meta name="description" content="挠脚心magic官方网站，专注轻松治愈系原创影像内容，汇聚优质创作者，深耕趣味生活垂直领域，打造值得信赖的内容社区与企业品牌门户。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff7a45'/%3E%3Ccircle cx='24' cy='26' r='6' fill='%23fff3e0'/%3E%3Ccircle cx='42' cy='26' r='6' fill='%23fff3e0'/%3E%3Cpath d='M18 42 Q32 54 46 42' stroke='%23fff3e0' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+--tkm-amber:#ff7a45;
+--tkm-amber-deep:#e85f27;
+--tkm-amber-soft:#ffe6d6;
+--tkm-cream:#fff8f0;
+--tkm-paper:#fffdfa;
+--tkm-ink:#33251d;
+--tkm-ink-soft:#6b5648;
+--tkm-line:#f0ddcc;
+--tkm-card:#ffffff;
+--tkm-shadow:0 10px 30px rgba(160,90,40,.10);
+--tkm-radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+background:var(--tkm-paper);
+color:var(--tkm-ink);
+line-height:1.75;
+-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.tkm-wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+/* ============ 吸顶公告 + 页头 ============ */
+.tkm-sticky-top{position:sticky;top:0;z-index:120;box-shadow:0 4px 18px rgba(120,70,30,.08)}
+.tkm-notice{
+background:linear-gradient(90deg,#ff7a45,#ff9a5f 45%,#ffb27a);
+color:#3a1f0e;font-size:13.5px;
+display:flex;align-items:center;justify-content:center;gap:14px;
+padding:8px 18px;letter-spacing:.3px;
+}
+.tkm-notice strong{background:rgba(255,255,255,.55);border-radius:20px;padding:1px 10px;font-size:12px;white-space:nowrap}
+.tkm-notice-track{position:relative;overflow:hidden;height:22px;flex:0 1 auto;min-width:200px}
+.tkm-notice-item{position:absolute;inset:0;opacity:0;transform:translateY(8px);transition:.45s;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.tkm-notice-item.is-on{opacity:1;transform:translateY(0)}
+.tkm-header{background:rgba(255,253,250,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--tkm-line)}
+.tkm-header-inner{display:flex;align-items:center;gap:26px;height:70px}
+.tkm-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.5px;flex-shrink:0}
+.tkm-logo-mark{
+width:38px;height:38px;border-radius:12px;flex-shrink:0;
+background:radial-gradient(circle at 30% 30%,#ffb27a,#ff7a45 60%,#e85f27);
+display:grid;place-items:center;color:#fff;font-size:17px;font-weight:900;
+box-shadow:0 6px 14px rgba(232,95,39,.35);
+}
+.tkm-logo small{display:block;font-size:10.5px;font-weight:500;color:var(--tkm-ink-soft);letter-spacing:2px;line-height:1}
+.tkm-nav{display:flex;gap:3px;margin-left:auto;flex-wrap:wrap}
+.tkm-nav a{
+font-size:14.5px;padding:8px 13px;border-radius:10px;color:var(--tkm-ink-soft);
+transition:.22s;white-space:nowrap;
+}
+.tkm-nav a:hover,.tkm-nav a.tkm-nav-active{background:var(--tkm-amber-soft);color:var(--tkm-amber-deep);font-weight:600}
+.tkm-search{position:relative;flex-shrink:0}
+.tkm-search input{
+width:200px;padding:9px 14px 9px 34px;border-radius:30px;border:1px solid var(--tkm-line);
+background:#fff;font-size:13.5px;color:var(--tkm-ink);outline:none;transition:.25s;
+}
+.tkm-search input:focus{width:240px;border-color:var(--tkm-amber);box-shadow:0 0 0 4px rgba(255,122,69,.12)}
+.tkm-search::before{
+content:"⌕";position:absolute;left:12px;top:50%;transform:translateY(-50%);
+color:var(--tkm-amber-deep);font-size:17px;font-weight:700;pointer-events:none;
+}
+.tkm-search-tip{
+position:absolute;top:calc(100% + 8px);right:0;width:240px;background:#fff;
+border:1px solid var(--tkm-line);border-radius:14px;box-shadow:var(--tkm-shadow);
+padding:10px 12px;font-size:12.5px;color:var(--tkm-ink-soft);display:none;
+}
+.tkm-search-tip.is-on{display:block;animation:tkmFade .25s ease}
+@keyframes tkmFade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.tkm-burger{display:none;margin-left:auto;width:42px;height:42px;border-radius:12px;background:var(--tkm-amber-soft);place-items:center;flex-direction:column;gap:4px}
+.tkm-burger span{width:18px;height:2px;background:var(--tkm-amber-deep);border-radius:2px;transition:.25s}
+.tkm-burger.is-on span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.tkm-burger.is-on span:nth-child(2){opacity:0}
+.tkm-burger.is-on span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.tkm-mobile-nav{display:none;flex-direction:column;gap:2px;padding:10px 22px 18px;background:#fff;border-top:1px solid var(--tkm-line)}
+.tkm-mobile-nav.is-on{display:flex}
+.tkm-mobile-nav a{padding:11px 12px;border-radius:10px;font-size:14.5px;color:var(--tkm-ink-soft)}
+.tkm-mobile-nav a:hover{background:var(--tkm-amber-soft);color:var(--tkm-amber-deep)}
+
+/* ============ 通用 ============ */
+.tkm-section{padding:76px 0;scroll-margin-top:120px}
+.tkm-section--cream{background:var(--tkm-cream)}
+.tkm-sec-head{max-width:760px;margin-bottom:40px}
+.tkm-kicker{
+display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;
+color:var(--tkm-amber-deep);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;
+}
+.tkm-kicker::before{content:"";width:26px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--tkm-amber),#ffb27a)}
+.tkm-sec-head h2{font-size:clamp(23px,3vw,32px);line-height:1.35;letter-spacing:.5px;font-weight:800;margin-bottom:14px}
+.tkm-sec-head p{color:var(--tkm-ink-soft);font-size:15px}
+.tkm-btn{
+display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:30px;
+font-size:14.5px;font-weight:700;transition:.25s;border:1.5px solid transparent;
+}
+.tkm-btn--primary{background:linear-gradient(135deg,#ff8a50,#e85f27);color:#fff;box-shadow:0 10px 22px rgba(232,95,39,.28)}
+.tkm-btn--primary:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(232,95,39,.36)}
+.tkm-btn--ghost{border-color:var(--tkm-line);color:var(--tkm-ink);background:#fff}
+.tkm-btn--ghost:hover{border-color:var(--tkm-amber);color:var(--tkm-amber-deep);background:var(--tkm-amber-soft)}
+.tkm-btn--sm{padding:8px 18px;font-size:13px}
+.tkm-tag{
+display:inline-block;font-size:11.5px;padding:2px 10px;border-radius:20px;
+background:var(--tkm-amber-soft);color:var(--tkm-amber-deep);font-weight:600;letter-spacing:.4px;
+}
+.tkm-tag--gray{background:#f2eee9;color:var(--tkm-ink-soft)}
+
+/* ============ 首屏 ============ */
+.tkm-hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#fff8f0 0%,#ffead9 55%,#ffe0c8 100%)}
+.tkm-hero::after{
+content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;
+background:radial-gradient(circle,rgba(255,154,95,.45),transparent 70%);pointer-events:none;
+}
+.tkm-hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;padding:70px 0 84px;position:relative;z-index:2}
+.tkm-hero-badge{
+display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--tkm-line);
+border-radius:30px;padding:6px 16px;font-size:12.5px;font-weight:700;color:var(--tkm-amber-deep);margin-bottom:20px;
+}
+.tkm-hero-badge i{width:7px;height:7px;border-radius:50%;background:#39c07a;box-shadow:0 0 0 4px rgba(57,192,122,.18);display:inline-block}
+.tkm-hero h1{font-size:clamp(38px,5.4vw,62px);line-height:1.12;font-weight:900;letter-spacing:1px;margin-bottom:8px}
+.tkm-hero h1 span{
+background:linear-gradient(120deg,#e85f27,#ff9a5f);
+-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.tkm-hero-slogan{font-size:clamp(18px,2.1vw,23px);font-weight:700;color:var(--tkm-ink);margin-bottom:18px;letter-spacing:.6px}
+.tkm-hero-intro{font-size:15px;color:var(--tkm-ink-soft);max-width:540px;margin-bottom:26px}
+.tkm-hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:32px}
+.tkm-hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:520px}
+.tkm-stat{
+background:rgba(255,255,255,.75);border:1px solid var(--tkm-line);border-radius:16px;
+padding:14px 16px;backdrop-filter:blur(6px);
+}
+.tkm-stat b{display:block;font-size:clamp(20px,2.5vw,26px);font-weight:900;color:var(--tkm-amber-deep);line-height:1.2}
+.tkm-stat span{font-size:12px;color:var(--tkm-ink-soft);letter-spacing:.5px}
+.tkm-hero-visual{position:relative}
+.tkm-hero-cover{
+border-radius:26px;overflow:hidden;box-shadow:0 26px 60px rgba(180,100,40,.22);
+border:6px solid #fff;background:#fff;position:relative;
+}
+.tkm-hero-mini{
+position:absolute;left:-26px;bottom:-28px;width:210px;border-radius:18px;overflow:hidden;
+border:5px solid #fff;box-shadow:0 18px 40px rgba(180,100,40,.25);background:#fff;
+}
+.tkm-hero-flag{
+position:absolute;right:-14px;top:-16px;background:#fff;border-radius:14px;padding:9px 15px;
+font-size:12.5px;font-weight:800;color:var(--tkm-amber-deep);box-shadow:0 10px 24px rgba(180,100,40,.20);
+display:flex;align-items:center;gap:7px;
+}
+.tkm-hero-flag i{width:8px;height:8px;border-radius:50%;background:var(--tkm-amber);display:inline-block;animation:tkmPulse 1.8s infinite}
+@keyframes tkmPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.8)}}
+
+/* ============ 关键词深度解析 ============ */
+.tkm-about-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:48px;align-items:start}
+.tkm-about-card{
+background:#fff;border:1px solid var(--tkm-line);border-radius:24px;padding:30px;box-shadow:var(--tkm-shadow);
+position:sticky;top:140px;
+}
+.tkm-about-card h3{font-size:19px;margin-bottom:12px}
+.tkm-about-card p{font-size:14px;color:var(--tkm-ink-soft);margin-bottom:18px}
+.tkm-about-list{display:flex;flex-direction:column;gap:12px}
+.tkm-about-list li{display:flex;gap:11px;font-size:13.5px;color:var(--tkm-ink-soft)}
+.tkm-about-list b{
+width:24px;height:24px;border-radius:8px;background:var(--tkm-amber-soft);color:var(--tkm-amber-deep);
+display:grid;place-items:center;font-size:12px;flex-shrink:0;margin-top:2px;
+}
+.tkm-about-text h2{font-size:clamp(23px,3vw,31px);line-height:1.35;font-weight:800;margin-bottom:18px}
+.tkm-about-text p{font-size:15px;color:var(--tkm-ink-soft);margin-bottom:16px;text-align:justify}
+.tkm-about-text p strong{color:var(--tkm-amber-deep)}
+.tkm-about-quote{
+border-left:4px solid var(--tkm-amber);background:var(--tkm-cream);border-radius:0 16px 16px 0;
+padding:16px 22px;font-size:14.5px;color:var(--tkm-ink);margin:22px 0;font-weight:600;
+}
+
+/* ============ 焦点内容 ============ */
+.tkm-feature-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:24px}
+.tkm-feature-main{
+position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--tkm-shadow);background:#fff;
+border:1px solid var(--tkm-line);
+}
+.tkm-feature-main .tkm-cover{aspect-ratio:16/9;position:relative}
+.tkm-feature-main .tkm-cover img{width:100%;height:100%;object-fit:cover}
+.tkm-feature-body{padding:22px 24px 26px}
+.tkm-feature-body h3{font-size:21px;margin:10px 0 10px;line-height:1.4}
+.tkm-feature-body p{font-size:14px;color:var(--tkm-ink-soft);margin-bottom:16px}
+.tkm-feature-meta{display:flex;align-items:center;gap:14px;font-size:12.5px;color:var(--tkm-ink-soft);flex-wrap:wrap}
+.tkm-feature-side{display:grid;grid-template-rows:repeat(2,1fr);gap:22px}
+.tkm-feature-mini{
+display:flex;gap:16px;background:#fff;border:1px solid var(--tkm-line);border-radius:20px;
+padding:14px;box-shadow:0 6px 18px rgba(160,90,40,.07);transition:.25s;
+}
+.tkm-feature-mini:hover{transform:translateY(-3px);box-shadow:var(--tkm-shadow)}
+.tkm-feature-mini .tkm-cover{width:150px;flex-shrink:0;border-radius:14px;overflow:hidden;aspect-ratio:16/10}
+.tkm-feature-mini .tkm-cover img{width:100%;height:100%;object-fit:cover}
+.tkm-feature-mini h4{font-size:15px;line-height:1.45;margin:6px 0 8px}
+.tkm-feature-mini p{font-size:12.5px;color:var(--tkm-ink-soft);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tkm-cover{position:relative;display:block;background:#ffd9c2}
+.tkm-cover .tkm-play{
+position:absolute;inset:0;margin:auto;width:46px;height:46px;border-radius:50%;
+background:rgba(255,255,255,.88);display:grid;place-items:center;
+box-shadow:0 6px 18px rgba(0,0,0,.18);transition:.25s;
+}
+.tkm-cover .tkm-play::after{
+content:"";width:0;height:0;border-left:13px solid var(--tkm-amber-deep);
+border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:3px;
+}
+.tkm-cover:hover .tkm-play{transform:scale(1.1);background:#fff}
+.tkm-cover .tkm-cover-tag{
+position:absolute;left:10px;top:10px;background:rgba(30,18,10,.62);color:#fff;
+font-size:11px;padding:3px 10px;border-radius:20px;backdrop-filter:blur(4px);
+}
+.tkm-cover .tkm-cover-dur{
+position:absolute;right:10px;bottom:10px;background:rgba(30,18,10,.66);color:#fff;
+font-size:11px;padding:2px 8px;border-radius:6px;
+}
+
+/* ============ 热门视频流 ============ */
+.tkm-flow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.tkm-video-card{
+background:#fff;border:1px solid var(--tkm-line);border-radius:20px;overflow:hidden;
+box-shadow:0 6px 18px rgba(160,90,40,.07);transition:.28s;display:flex;flex-direction:column;
+}
+.tkm-video-card:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(160,90,40,.16)}
+.tkm-video-card .tkm-cover{aspect-ratio:16/9}
+.tkm-video-card .tkm-cover img{width:100%;height:100%;object-fit:cover}
+.tkm-video-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.tkm-video-body h3{font-size:15.5px;line-height:1.5;margin-bottom:8px}
+.tkm-video-body p{font-size:12.8px;color:var(--tkm-ink-soft);margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tkm-video-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.tkm-author{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--tkm-ink-soft)}
+.tkm-avatar{
+width:26px;height:26px;border-radius:50%;display:grid;place-items:center;
+font-size:12px;font-weight:800;color:#fff;flex-shrink:0;
+}
+.tkm-op{display:flex;align-items:center;gap:12px}
+.tkm-op button{display:inline-flex;align-items:center;gap:4px;font-size:12.5px;color:var(--tkm-ink-soft);transition:.2s;padding:3px;border-radius:8px}
+.tkm-op button:hover{color:var(--tkm-amber-deep);background:var(--tkm-amber-soft)}
+.tkm-op button.is-liked{color:var(--tkm-amber-deep);font-weight:700}
+.tkm-op button.is-saved{color:#d64545}
+.tkm-video-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+
+/* ============ 专题 ============ */
+.tkm-topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.tkm-topic-card{
+border-radius:20px;overflow:hidden;position:relative;background:#fff;border:1px solid var(--tkm-line);
+box-shadow:0 6px 18px rgba(160,90,40,.07);transition:.26s;
+}
+.tkm-topic-card:hover{transform:translateY(-4px);box-shadow:var(--tkm-shadow)}
+.tkm-topic-card .tkm-cover{aspect-ratio:4/3}
+.tkm-topic-card .tkm-cover img{width:100%;height:100%;object-fit:cover}
+.tkm-topic-info{padding:16px 18px 20px}
+.tkm-topic-info h3{font-size:16px;margin-bottom:8px}
+.tkm-topic-info p{font-size:12.8px;color:var(--tkm-ink-soft);margin-bottom:12px;min-height:38px}
+.tkm-topic-status{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--tkm-ink-soft)}
+.tkm-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#39c07a;margin-right:5px}
+.tkm-dot--warn{background:#f0a500}
+
+/* ============ 创作者矩阵 ============ */
+.tkm-creator-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.tkm-creator-card{
+background:#fff;border:1px solid var(--tkm-line);border-radius:20px;padding:24px;
+text-align:center;box-shadow:0 6px 18px rgba(160,90,40,.07);transition:.26s;position:relative;overflow:hidden;
+}
+.tkm-creator-card::before{
+content:"";position:absolute;left:0;right:0;top:0;height:64px;
+background:linear-gradient(120deg,#ffe6d6,#ffd0b0);
+}
+.tkm-creator-card:hover{transform:translateY(-4px);box-shadow:var(--tkm-shadow)}
+.tkm-creator-avatar{
+width:70px;height:70px;border-radius:50%;margin:10px auto 12px;position:relative;z-index:2;
+display:grid;place-items:center;font-size:26px;font-weight:900;color:#fff;border:4px solid #fff;
+box-shadow:0 8px 20px rgba(180,100,40,.22);
+}
+.tkm-creator-card h3{font-size:17px;margin-bottom:4px;position:relative;z-index:2}
+.tkm-creator-field{font-size:12.5px;color:var(--tkm-amber-deep);font-weight:700;margin-bottom:10px}
+.tkm-creator-card p{font-size:13px;color:var(--tkm-ink-soft);margin-bottom:14px;min-height:42px}
+.tkm-creator-data{display:flex;justify-content:center;gap:22px;font-size:12px;color:var(--tkm-ink-soft);margin-bottom:16px}
+.tkm-creator-data b{display:block;font-size:15px;color:var(--tkm-ink);font-weight:800}
+
+/* ============ 影像墙 ============ */
+.tkm-wall{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:16px}
+.tkm-wall-item{border-radius:16px;overflow:hidden;position:relative;background:#ffd9c2;box-shadow:0 6px 16px rgba(160,90,40,.09)}
+.tkm-wall-item img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.tkm-wall-item:hover img{transform:scale(1.06)}
+.tkm-wall-item figcaption{
+position:absolute;left:0;right:0;bottom:0;padding:22px 14px 10px;color:#fff;font-size:12.5px;font-weight:600;
+background:linear-gradient(transparent,rgba(30,18,10,.72));
+}
+.tkm-wall-item--big{grid-column:span 2;grid-row:span 2}
+.tkm-wall-item--wide{grid-column:span 2}
+
+/* ============ 评价 ============ */
+.tkm-review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tkm-review{
+background:#fff;border:1px solid var(--tkm-line);border-radius:20px;padding:22px;
+box-shadow:0 6px 18px rgba(160,90,40,.07);display:flex;flex-direction:column;
+}
+.tkm-review:nth-child(2){background:#fff6ee}
+.tkm-review:nth-child(5){background:#fff6ee}
+.tkm-review-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.tkm-review-head b{font-size:14px}
+.tkm-review-head span{font-size:11.5px;color:var(--tkm-ink-soft);display:block}
+.tkm-review p{font-size:13.5px;color:var(--tkm-ink-soft);line-height:1.8;flex:1}
+.tkm-review-stars{color:#f0a500;font-size:13px;letter-spacing:2px;margin-top:12px}
+
+/* ============ 动态 ============ */
+.tkm-news-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:34px}
+.tkm-news-list{display:flex;flex-direction:column;gap:0}
+.tkm-news-item{
+display:flex;gap:18px;padding:20px 0;border-bottom:1px dashed var(--tkm-line);align-items:flex-start;
+}
+.tkm-news-item:first-child{padding-top:0}
+.tkm-news-date{
+background:var(--tkm-amber-soft);color:var(--tkm-amber-deep);border-radius:12px;
+padding:8px 12px;font-size:12px;font-weight:800;text-align:center;flex-shrink:0;line-height:1.4;
+}
+.tkm-news-date b{display:block;font-size:18px}
+.tkm-news-item h3{font-size:15.5px;margin-bottom:6px}
+.tkm-news-item p{font-size:13px;color:var(--tkm-ink-soft)}
+.tkm-partner-box{background:#fff;border:1px solid var(--tkm-line);border-radius:22px;padding:26px;box-shadow:var(--tkm-shadow)}
+.tkm-partner-box h3{font-size:17px;margin-bottom:16px}
+.tkm-partners{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.tkm-partner{
+background:var(--tkm-cream);border-radius:12px;padding:14px 12px;text-align:center;
+font-size:13px;font-weight:700;color:var(--tkm-ink-soft);transition:.22s;
+}
+.tkm-partner:hover{background:var(--tkm-amber-soft);color:var(--tkm-amber-deep)}
+
+/* ============ FAQ / 联系 ============ */
+.tkm-faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 26px}
+.tkm-faq-grid details{
+background:#fff;border:1px solid var(--tkm-line);border-radius:14px;padding:0 18px;transition:.22s;
+}
+.tkm-faq-grid details[open]{border-color:var(--tkm-amber);box-shadow:0 6px 18px rgba(160,90,40,.08)}
+.tkm-faq-grid summary{
+list-style:none;cursor:pointer;padding:16px 0;font-size:14.5px;font-weight:700;
+display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.tkm-faq-grid summary::-webkit-details-marker{display:none}
+.tkm-faq-grid summary::after{content:"+";font-size:20px;color:var(--tkm-amber-deep);font-weight:400;transition:.2s}
+.tkm-faq-grid details[open] summary::after{transform:rotate(45deg)}
+.tkm-faq-grid details p{font-size:13.5px;color:var(--tkm-ink-soft);padding:0 0 16px}
+.tkm-contact{
+margin-top:44px;background:linear-gradient(135deg,#33251d,#5a3b28);border-radius:28px;
+padding:44px;color:#fff;display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center;
+position:relative;overflow:hidden;
+}
+.tkm-contact::after{
+content:"";position:absolute;right:-80px;bottom:-80px;width:280px;height:280px;border-radius:50%;
+background:radial-gradient(circle,rgba(255,154,95,.35),transparent 70%);
+}
+.tkm-contact h2{font-size:clamp(22px,2.8vw,30px);margin-bottom:12px;line-height:1.35;position:relative;z-index:2}
+.tkm-contact p{font-size:14px;color:rgba(255,248,240,.8);position:relative;z-index:2;margin-bottom:8px}
+.tkm-contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;position:relative;z-index:2}
+.tkm-contact-actions .tkm-btn--ghost{border-color:rgba(255,255,255,.4);color:#fff;background:transparent}
+.tkm-contact-actions .tkm-btn--ghost:hover{background:rgba(255,255,255,.14);color:#fff;border-color:#fff}
+.tkm-contact-info{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:22px;position:relative;z-index:2}
+.tkm-contact-info li{display:flex;justify-content:space-between;gap:14px;padding:9px 0;font-size:13px;border-bottom:1px dashed rgba(255,255,255,.16)}
+.tkm-contact-info li:last-child{border-bottom:none}
+.tkm-contact-info span{color:rgba(255,248,240,.66)}
+
+/* ============ 页脚 ============ */
+.tkm-footer{background:#2a1e17;color:rgba(255,248,240,.78);padding:56px 0 26px;margin-top:0}
+.tkm-footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:34px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1)}
+.tkm-footer .tkm-logo{color:#fff;margin-bottom:14px}
+.tkm-footer .tkm-logo small{color:rgba(255,248,240,.55)}
+.tkm-footer-brand p{font-size:13px;line-height:1.9;max-width:320px}
+.tkm-footer h4{color:#fff;font-size:14.5px;margin-bottom:14px;letter-spacing:.6px}
+.tkm-footer li{margin-bottom:9px;font-size:13px}
+.tkm-footer li a{transition:.2s}
+.tkm-footer li a:hover{color:var(--tkm-amber)}
+.tkm-footer-bottom{padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:rgba(255,248,240,.5)}
+
+/* ============ 浮动组件 ============ */
+.tkm-toast{
+position:fixed;left:50%;bottom:40px;transform:translate(-50%,20px);background:#33251d;color:#fff;
+padding:11px 24px;border-radius:30px;font-size:13.5px;opacity:0;pointer-events:none;transition:.32s;z-index:300;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+.tkm-toast.is-on{opacity:1;transform:translate(-50%,0)}
+.tkm-top{
+position:fixed;right:24px;bottom:28px;width:46px;height:46px;border-radius:50%;
+background:linear-gradient(135deg,#ff8a50,#e85f27);color:#fff;display:grid;place-items:center;
+font-size:18px;box-shadow:0 10px 24px rgba(232,95,39,.35);opacity:0;pointer-events:none;transition:.3s;z-index:200;
+}
+.tkm-top.is-on{opacity:1;pointer-events:auto}
+.tkm-top:hover{transform:translateY(-3px)}
+.tkm-modal{
+position:fixed;inset:0;background:rgba(30,18,10,.55);display:none;place-items:center;z-index:400;padding:22px;
+backdrop-filter:blur(3px);
+}
+.tkm-modal.is-on{display:grid;animation:tkmFade .25s ease}
+.tkm-modal-box{background:#fff;border-radius:22px;max-width:460px;width:100%;padding:30px;position:relative}
+.tkm-modal-box h3{font-size:19px;margin-bottom:8px}
+.tkm-modal-box p{font-size:13.5px;color:var(--tkm-ink-soft);margin-bottom:18px}
+.tkm-modal-close{position:absolute;right:16px;top:14px;font-size:20px;color:var(--tkm-ink-soft);width:32px;height:32px;border-radius:50%;display:grid;place-items:center}
+.tkm-modal-close:hover{background:var(--tkm-amber-soft);color:var(--tkm-amber-deep)}
+.tkm-modal-box input,.tkm-modal-box textarea{
+width:100%;border:1px solid var(--tkm-line);border-radius:12px;padding:11px 14px;font-size:13.5px;
+margin-bottom:12px;outline:none;font-family:inherit;background:var(--tkm-paper);resize:vertical;
+}
+.tkm-modal-box input:focus,.tkm-modal-box textarea:focus{border-color:var(--tkm-amber);box-shadow:0 0 0 3px rgba(255,122,69,.12)}
+
+/* ============ 响应式 ============ */
+@media(max-width:1024px){
+.tkm-hero-inner{grid-template-columns:1fr;gap:40px;padding:54px 0 64px}
+.tkm-hero-visual{max-width:560px}
+.tkm-about-grid{grid-template-columns:1fr}
+.tkm-about-card{position:static}
+.tkm-feature-grid{grid-template-columns:1fr}
+.tkm-feature-side{grid-template-rows:none;grid-template-columns:1fr 1fr}
+.tkm-flow-grid{grid-template-columns:repeat(2,1fr)}
+.tkm-topic-grid{grid-template-columns:repeat(2,1fr)}
+.tkm-creator-grid{grid-template-columns:repeat(2,1fr)}
+.tkm-review-grid{grid-template-columns:repeat(2,1fr)}
+.tkm-news-grid{grid-template-columns:1fr}
+.tkm-footer-grid{grid-template-columns:1fr 1fr}
+.tkm-contact{grid-template-columns:1fr;padding:34px}
+}
+@media(max-width:760px){
+.tkm-nav,.tkm-search{display:none}
+.tkm-burger{display:flex}
+.tkm-hero-stats{grid-template-columns:repeat(3,1fr);gap:10px}
+.tkm-stat{padding:11px 10px}
+.tkm-feature-side{grid-template-columns:1fr}
+.tkm-feature-mini{flex-direction:column}
+.tkm-feature-mini .tkm-cover{width:100%}
+.tkm-flow-grid,.tkm-topic-grid,.tkm-creator-grid,.tkm-review-grid{grid-template-columns:1fr}
+.tkm-wall{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px}
+.tkm-wall-item--big{grid-column:span 2;grid-row:span 1}
+.tkm-wall-item--wide{grid-column:span 2}
+.tkm-faq-grid{grid-template-columns:1fr}
+.tkm-footer-grid{grid-template-columns:1fr}
+.tkm-section{padding:56px 0}
+.tkm-hero-mini{width:150px;left:-10px;bottom:-18px}
+.tkm-contact{padding:28px}
+.tkm-notice{font-size:12px;gap:8px}
+.tkm-notice-track{min-width:0;flex:1}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="tkm-sticky-top">
+  <div class="tkm-notice" role="status" aria-label="站内公告">
+    <strong>公告</strong>
+    <div class="tkm-notice-track" id="tkmNoticeTrack">
+      <span class="tkm-notice-item is-on">「挠脚心magic 冬日治愈影像季」专题页上线，首批 12 支原创短片已更新</span>
+      <span class="tkm-notice-item">创作者扶持计划第二期开放报名，投稿通道将于 11 月 30 日 24:00 关闭</span>
+      <span class="tkm-notice-item">官方发布内容规范 v2.3，新增短片封面与字幕标注指引</span>
+    </div>
+  </div>
+  <header class="tkm-header">
+    <div class="tkm-wrap tkm-header-inner">
+      <a class="tkm-logo" href="#tkm-home" aria-label="挠脚心magic官网首页">
+        <span class="tkm-logo-mark">挠</span>
+        <span>挠脚心magic<small>OFFICIAL SITE</small></span>
+      </a>
+      <nav class="tkm-nav" aria-label="主导航">
+        <a href="#tkm-home" class="tkm-nav-active">首页</a>
+        <a href="#tkm-focus">焦点内容</a>
+        <a href="#tkm-flow">热门影像</a>
+        <a href="#tkm-topics">专题企划</a>
+        <a href="#tkm-creators">创作者</a>
+        <a href="#tkm-news">企业动态</a>
+        <a href="#tkm-help">帮助与联系</a>
+      </nav>
+      <div class="tkm-search">
+        <input type="search" id="tkmSearchInput" placeholder="搜索影像、创作者、专题" aria-label="站内搜索">
+        <div class="tkm-search-tip" id="tkmSearchTip"></div>
+      </div>
+      <button class="tkm-burger" id="tkmBurger" aria-label="展开导航菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="tkm-mobile-nav" id="tkmMobileNav" aria-label="移动端导航">
+      <a href="#tkm-home">首页</a>
+      <a href="#tkm-focus">焦点内容</a>
+      <a href="#tkm-flow">热门影像</a>
+      <a href="#tkm-topics">专题企划</a>
+      <a href="#tkm-creators">创作者</a>
+      <a href="#tkm-news">企业动态</a>
+      <a href="#tkm-help">帮助与联系</a>
+    </nav>
+  </header>
+</div>
+
+<main>
+
+<!-- ============ 首屏 ============ -->
+<section class="tkm-hero" id="tkm-home">
+  <div class="tkm-wrap tkm-hero-inner">
+    <div class="tkm-hero-copy">
+      <div class="tkm-hero-badge"><i></i>挠脚心magic 官方网站 · 持续运营中</div>
+      <h1>挠脚心<span>magic</span></h1>
+      <p class="tkm-hero-slogan">让每一支短片，都轻轻挠到心里最软的地方</p>
+      <p class="tkm-hero-intro">
+        作为一家专注轻松治愈系原创影像的企业，挠脚心magic 以品牌官网为窗口，为创作者与观众搭建高品质内容生态。我们深耕趣味生活垂直领域，坚持正版、高清、专业的选片标准，用真实、温暖、有力量的影像，陪伴每一个想要松一口气的日常。
+      </p>
+      <div class="tkm-hero-actions">
+        <a class="tkm-btn tkm-btn--primary" href="#tkm-flow">浏览热门影像</a>
+        <a class="tkm-btn tkm-btn--ghost" href="#tkm-creators">认识创作者</a>
+        <button class="tkm-btn tkm-btn--ghost" id="tkmSubmitOpen">投稿报名</button>
+      </div>
+      <div class="tkm-hero-stats">
+        <div class="tkm-stat"><b data-count="1860">0</b><span>原创短片（支）</span></div>
+        <div class="tkm-stat"><b data-count="326">0</b><span>签约创作者（位）</span></div>
+        <div class="tkm-stat"><b data-count="94">0</b><span>用户好评率（%）</span></div>
+      </div>
+    </div>
+    <div class="tkm-hero-visual">
+      <div class="tkm-hero-cover">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ffb27a'/%3E%3Cstop offset='.5' stop-color='%23ff8a50'/%3E%3Cstop offset='1' stop-color='%23e85f27'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23g1)'/%3E%3Ccircle cx='510' cy='80' r='95' fill='%23fff3e0' opacity='.28'/%3E%3Ccircle cx='120' cy='300' r='130' fill='%23ffe0c8' opacity='.22'/%3E%3Cpath d='M60 250 Q160 160 260 230 T460 200' stroke='%23fff8f0' stroke-width='9' fill='none' opacity='.65' stroke-linecap='round'/%3E%3Crect x='230' y='120' width='180' height='120' rx='16' fill='%23fff8f0' opacity='.92'/%3E%3Cpath d='M300 160 L345 185 L300 210 Z' fill='%23e85f27'/%3E%3Ctext x='320' y='282' font-size='20' fill='%23fff8f0' font-family='sans-serif' text-anchor='middle' font-weight='bold'%3E挠脚心magic%3C/text%3E%3C/svg%3E" alt="挠脚心magic品牌形象主视觉：暖橙色渐变与播放图标">
+      </div>
+      <div class="tkm-hero-flag"><i></i>本周新增 18 支内容</div>
+      <div class="tkm-hero-mini">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 250'%3E%3Crect width='420' height='250' fill='%23fff1e4'/%3E%3Ccircle cx='90' cy='70' r='46' fill='%23ffb27a' opacity='.8'/%3E%3Ccircle cx='330' cy='180' r='60' fill='%23ff8a50' opacity='.5'/%3E%3Crect x='140' y='90' width='140' height='80' rx='12' fill='%23e85f27'/%3E%3Ctext x='210' y='140' font-size='16' fill='%23fff8f0' font-family='sans-serif' text-anchor='middle' font-weight='bold'%3E新片速递%3C/text%3E%3C/svg%3E" alt="挠脚心magic新片速递封面：暖色几何图形组合">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 品牌解析 ============ -->
+<section class="tkm-section" id="tkm-about">
+  <div class="tkm-wrap">
+    <div class="tkm-about-grid">
+      <aside class="tkm-about-card">
+        <h3>认识挠脚心magic</h3>
+        <p>一个把「轻」做到极致的内容品牌，也是一群认真做片子的人。</p>
+        <ul class="tkm-about-list">
+          <li><b>1</b>以趣味日常为切口，记录被忽略的小情绪</li>
+          <li><b>2</b>建立创作者分级扶持体系，保护原创首播权益</li>
+          <li><b>3</b>坚持高清成片标准与正版素材来源</li>
+          <li><b>4</b>内容社区长期开放，重视每一位观众的反馈</li>
+        </ul>
+      </aside>
+      <div class="tkm-about-text">
+        <span class="tkm-kicker">Brand Insight</span>
+        <h2>关于「挠脚心」这件事，我们想认真地说清楚</h2>
+        <p>
+          「挠脚心」这三个字，在中文语境里天然带着一种奇妙的身体记忆：它不疼，却让人忍不住笑；它有点痒，却让人愿意再靠近一点。挠脚心magic 把这种感受提炼为品牌的内核——用影像制造一种轻巧的、带着笑意的小小触动。<strong>作为挠脚心magic官方网站的核心介绍板块</strong>，我们想说明的并不是一个抽象的比喻，而是这家企业过去数年持续运营的真实方法论：先让人觉得舒服，再让人觉得有收获。
+        </p>
+        <p>
+          在内容定位上，挠脚心magic 属于生活方式与兴趣类的视频品牌。我们把镜头对准那些被快节奏生活略过的瞬间：加班回家路上的一段路灯、厨房里失败的第一次揉面、海边被风吹乱的头发、和宠物较劲的十分钟。这些内容看起来轻，却需要我们付出相当专业的制作流程——前期选题要经过三轮筛选，成片要满足高清画质与声音标准，剪辑节奏要照顾观众的注意力曲线。我们不追求把每一支片子拍成大片，但要求每一支片子都对得起观众花掉的那几分钟。
+        </p>
+        <div class="tkm-about-quote">
+          「先让人放松，再让人记住。这是我们判断一支短片是否合格的第一标准。」
+        </div>
+        <p>
+          在创作者生态上，挠脚心magic 坚持「陪创作者长大」的长期主义。平台设有新人孵化、成长加速与品牌共创三个阶段，新人期提供选题诊断与拍摄建议，成长期开放专题联合企划，成熟期则进入品牌故事与商业定制环节。我们希望创作者不必为了流量扭曲自己的表达，也不必因为缺少方法论而停在原地。截止目前，官网已收录 1860 支原创短片，签约创作者 326 位，覆盖城市探索、日常记录、手作 DIY、萌宠日常、治愈影像等十余个题材方向，形成了稳定而多元的内容供给。
+        </p>
+        <p>
+          在社区体验上，挠脚心magic 更愿意把自己看作一个「可以慢慢逛」的地方。首页不会用密集的弹窗打断浏览，搜索会给到明确的筛选反馈，点赞与收藏会真实记录你的偏好，评论区的语气被刻意维护得温和一些。我们相信，一个内容品牌的口碑不是靠单支爆款撑起来的，而是靠每一次点击后「还不错，下次再来」的微小确认累积起来的。<strong>值得信赖</strong>这四个字，对挠脚心magic 而言不是宣传语，而是需要被反复验证的日常。
+        </p>
+        <p>
+          面向未来，挠脚心magic 将继续深耕趣味生活这一垂直领域，同时把内容生态向更多元的题材打开：我们计划在明年推出面向青年创作者的影像挑战赛，开放品牌素材库供非商业创作使用，也会在企业动态中持续公开内容规范与运营数据。我们希望这家企业品牌官网不只是一个展示窗口，更是一份可以被查阅、被讨论、被共同书写的长期记录。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 焦点内容 ============ -->
+<section class="tkm-section tkm-section--cream" id="tkm-focus">
+  <div class="tkm-wrap">
+    <div class="tkm-sec-head">
+      <span class="tkm-kicker">Featured</span>
+      <h2>本周焦点：挠脚心magic 编辑部精选</h2>
+      <p>由内容团队与创作者共同推荐，覆盖城市探索、手作、治愈影像三个方向，每一支都值得完整看完。</p>
+    </div>
+    <div class="tkm-feature-grid">
+      <article class="tkm-feature-main">
+        <div class="tkm-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='f1a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233c5a7a'/%3E%3Cstop offset='1' stop-color='%23a8c4d8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23f1a)'/%3E%3Cpath d='M0 300 L120 220 L240 280 L380 190 L520 260 L640 210 L640 360 L0 360 Z' fill='%23e8f2fa' opacity='.55'/%3E%3Ccircle cx='510' cy='80' r='42' fill='%23fff8e0' opacity='.85'/%3E%3Cpath d='M80 120 Q160 90 240 120' stroke='%23fff' stroke-width='4' fill='none' opacity='.5' stroke-dasharray='10 8'/%3E%3Ctext x='320' y='95' font-size='19' fill='%23ffffff' font-family='sans-serif' text-anchor='middle' font-weight='bold' opacity='.9'%3E城市晨间散步%3C/text%3E%3C/svg%3E" alt="城市晨间散步短片封面：蓝灰江景与晨雾">
+          <span class="tkm-cover-tag">焦点推荐</span>
+          <span class="tkm-play" aria-hidden="true"></span>
+          <span class="tkm-cover-dur">08:24</span>
+        </div>
+        <div class="tkm-feature-body">
+          <span class="tkm-tag">城市探索</span>
+          <h3>清晨六点的江边，我陪一位环卫工走完了他的第一班岗</h3>
+          <p>不用旁白，只保留脚步声、扫地声和偶尔的鸟叫。这支短片用 8 分钟记录了一段被城市忽略的时间，也记录了挠脚心magic 对「真实」的理解：不修饰，但要认真看。</p>
+          <div class="tkm-feature-meta">
+            <span>创作者 · 陈屿</span><span>·</span><span>2.4 万次播放</span><span>·</span><span>更新于 11 月 16 日</span>
+          </div>
+        </div>
+      </article>
+      <div class="tkm-feature-side">
+        <article class="tkm-feature-mini">
+          <div class="tkm-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'%3E%3Crect width='320' height='200' fill='%23f5e6d3'/%3E%3Ccircle cx='80' cy='60' r='38' fill='%23d98b5f' opacity='.7'/%3E%3Crect x='150' y='40' width='110' height='120' rx='10' fill='%23b3703f' opacity='.75'/%3E%3Cpath d='M170 80 H240 M170 105 H220 M170 130 H235' stroke='%23f5e6d3' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E" alt="手作陶器短片封面：陶土色器皿与木桌">
+            <span class="tkm-play" aria-hidden="true"></span>
+          </div>
+          <div>
+            <span class="tkm-tag">手作 DIY</span>
+            <h4>拉坯失败第七次之后，我终于做出了一只歪碗</h4>
+            <p>记录一个手作新手的完整下午，包括所有不耐烦的时刻。</p>
+          </div>
+        </article>
+        <article class="tkm-feature-mini">
+          <div class="tkm-cover">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'%3E%3Crect width='320' height='200' fill='%233b3a4e'/%3E%3Ccircle cx='240' cy='55' r='30' fill='%23f0e6a8' opacity='.85'/%3E%3Cpath d='M0 150 Q80 110 160 150 T320 140 L320 200 L0 200 Z' fill='%236b6a8a'/%3E%3Ccircle cx='90' cy='120' r='8' fill='%23ffd9a0'/%3E%3Ccircle cx='130' cy='135' r='5' fill='%23ffd9a0'/%3E%3C/svg%3E" alt="治愈夜景短片封面：深蓝夜空与暖黄灯光">
+            <span class="tkm-play" aria-hidden="true"></span>
+          </div>
+          <div>
+            <span class="tkm-tag">治愈影像</span>
+            <h4>失眠的第三夜，我拍下了楼下便利店的整晚</h4>
+            <p>一个人的深夜，和一间不打烊的小店之间，发生了一点事。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 热门影像 ============ -->
+<section class="tkm-section" id="tkm-flow">
+  <div class="tkm-wrap">
+    <div class="tkm-sec-head">
+      <span class="tkm-kicker">Trending</span>
+      <h2>热门影像流</h2>
+      <p>来自挠脚心magic 内容社区的真实反馈排序，点击卡片右下角可点赞与收藏，你的每一次互动都会影响推荐。</p>
+    </div>
+    <div class="tkm-flow-grid" id="tkmFlowGrid">
+
+      <article class="tkm-video-card">
+        <div class="tkm-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23e8f0e2'/%3E%3Cpath d='M0 175 Q100 120 200 165 T400 140 L400 225 L0 225 Z' fill='%236f9e6a' opacity='.6'/%3E%3Ccircle cx='310' cy='55' r='34' fill='%23f5d76e' opacity='.85'/%3E%3Crect x='40' y='70' width='26' height='90' rx='6' fill='%23557d52'/%3E%3Crect x='72' y='95' width='22' height='65' rx='5' fill='%236f9e6a'/%3E%3C/svg%3E" alt="阳台种植短片封面：绿色植物与晨光">
+          <span class="tkm-cover-tag">日常记录</span>
+          <span class="tkm-play" aria-hidden="true"></span>
+          <span class="tkm-cover-dur">06:12</span>
+        </div>
+        <div class="tkm-video-body">
+          <div class="tkm-video-tags"><span class="tkm-tag">慢生活</span><span class="tkm-tag tkm-tag--gray">阳台</span></div>
+          <h3>在六平米阳台上，我种活了一整个春天</h3>
+          <p>从一颗发芽的番茄开始，记录城市小空间里的种植实验与心情变化。</p>
+          <div class="tkm-video-foot">
+            <span class="tkm-author"><span class="tkm-avatar" style="background:#6f9e6a">林</span>林知夏</span>
+            <span class="tkm-op">
+              <button data-like aria-label="点赞"><span>♡</span><i>328</i></button>
+              <button data-save aria-label="收藏"><span>♡</span></button>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tkm-video-card">
+        <div class="tkm-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23fce4d6'/%3E%3Ccircle cx='120' cy='110' r='62' fill='%23f0a86b' opacity='.55'/%3E%3Crect x='200' y='60' width='140' height='110' rx='12' fill='%23d97742' opacity='.7'/%3E%3Cpath d='M230 95 H310 M230 120 H290 M230 145 H305' stroke='%23fff6ec' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E" alt="厨房烹饪短片封面：暖橘色汤锅与木勺">
+          <span class="tkm-cover-tag">美食烹饪</span>
+          <span class="tkm-play" aria-hidden="true"></span>
+          <span class="tkm-cover-dur">11:38</span>
+        </div>
+        <div class="tkm-video-body">
+          <div class="tkm-video-tags"><span class="tkm-tag">实用技巧</span><span class="tkm-tag tkm-tag--gray">家常菜</span></div>
+          <h3>一锅到底的番茄牛腩，新手也能不翻车</h3>
+          <p>把复杂的炖煮流程拆成五步，附上失败常见原因与补救办法。</p>
+          <div class="tkm-video-foot">
+            <span class="tkm-author"><span class="tkm-avatar" style="background:#d97742">周</span>周小满</span>
+            <span class="tkm-op">
+              <button data-like aria-label="点赞"><span>♡</span><i>512</i></button>
+              <button data-save aria-label="收藏"><span>♡</span></button>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tkm-video-card">
+        <div class="tkm-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%232e3440'/%3E%3Crect x='0' y='150' width='400' height='75' fill='%23435061'/%3E%3Ccircle cx='300' cy='50' r='26' fill='%2364d2c0' opacity='.7'/%3E%3Crect x='40' y='80' width='60' height='80' rx='8' fill='%23a3b1c2' opacity='.4'/%3E%3Crect x='120' y='100' width='45' height='60' rx='6' fill='%2364d2c0' opacity='.35'/%3E%3C/svg%3E" alt="科技前沿短片封面：深色界面与青绿色光点">
+          <span class="tkm-cover-tag">科技前沿</span>
+          <span class="tkm-play" aria-hidden="true"></span>
+          <span class="tkm-cover-dur">09:05</span>
+        </div>
+        <div class="tkm-video-body">
+          <div class="tkm-video-tags"><span class="tkm-tag">深度测评</span><span class="tkm-tag tkm-tag--gray">效率</span></div>
+          <h3>用了三个月，我把桌面上的设备砍到只剩三件</h3>
+          <p>不是极简主义宣言，只是一次基于真实使用频率的设备取舍复盘。</p>
+          <div class="tkm-video-foot">
+            <span class="tkm-author"><span class="tkm-avatar" style="background:#435061">许</span>许一鸣</span>
+            <span class="tkm-op">
+              <button data-like aria-label="点赞"><span>♡</span><i>276</i></button>
+              <button data-save aria-label="收藏"><span>♡</span></button>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tkm-video-card">
+        <div class="tkm-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23f6e7f0'/%3E%3Ccircle cx='200' cy='120' r='60' fill='%23e6a9c7' opacity='.7'/%3E%3Ccircle cx='200' cy='120' r='34' fill='%23f6e7f0' opacity='.85'/%3E%3Cpath d='M60 60 L90 90 M330 60 L300 90' stroke='%23c98aae' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E" alt="情感故事短片封面：柔和粉紫圆形构图">
+          <span class="tkm-cover-tag">情感故事</span>
+          <span class="tkm-play" aria-hidden="true"></span>
+          <span class="tkm-cover-dur">07:47</span>
+        </div>
+        <div class="tkm-video-body">
+          <div class="tkm-video-tags"><span class="tkm-tag">人物访谈</span><span class="tkm-tag tkm-tag--gray">关系</span></div>
+          <h3>和我妈一起重看她二十岁那年的照片</h3>
+          <p>两代人对同一张照片的记忆出现了偏差，谈话从这里开始变得有意思。</p>
+          <div class="tkm-video-foot">
+            <span class="tkm-author"><span class="tkm-avatar" style="background:#c98aae">沈</span>沈南枝</span>
+            <span class="tkm-op">
+              <button data-like aria-label="点赞"><span>♡</span><i>694</i></button>
+              <button data-save aria-label="收藏"><span>♡</span></button>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tkm-video-card">
+        <div class="tkm-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23eaf3e8'/%3E%3Ccircle cx='95' cy='95' r='46' fill='%23a8c79a'/%3E%3Ccircle cx='135' cy='115' r='26' fill='%23f6f1df'/%3E%3Cpath d='M220 150 Q280 100 340 145' stroke='%236f9e6a' stroke-width='8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" alt="萌宠日常短片封面：草绿色与猫咪剪影">
+          <span class="tkm-cover-tag">萌宠日常</span>
+          <span class="tkm-play" aria-hidden="true"></span>
+          <span class="tkm-cover-dur">04:56</span>
+        </div>
+        <div class="tkm-video-body">
+          <div class="tkm-video-tags"><span class="tkm-tag">兴趣同好</span><span class="tkm-tag tkm-tag--gray">猫咪</span></div>
+          <h3>搬家第三周，猫终于承认这是它的新领地</h3>
+          <p>用一台固定机位，记录猫从躲床底到霸占沙发的完整适应过程。</p>
+          <div class="tkm-video-foot">
+            <span class="tkm-author"><span class="tkm-avatar" style="background:#6f9e6a">白</span>白露</span>
+            <span class="tkm-op">
+              <button data-like aria-label="点赞"><span>♡</span><i>431</i></button>
+              <button data-save aria-label="收藏"><span>♡</span></button>
+            </span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tkm-video-card">
+        <div class="tkm-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23f2e3cf'/%3E%3Crect x='30' y='50' width='100' height='130' rx='8' fill='%23b98b5e'/%3E%3Crect x='150' y='80' width='90' height='100' rx='8' fill='%23d9b183'/%3E%3Crect x='260' y='40' width='110' height='140' rx='8' fill='%23a87a52'/%3E%3Cpath d='M45 175 H115' stroke='%23f2e3cf' stroke-width='5'/%3E%3C/svg%3E" alt="家居收纳短片封面：木质柜体与暖棕色调">
+          <span class="tkm-cover-tag">家居收纳</span>
+          <span class="tkm-play" aria-hidden="true"></span>
+          <span class="tkm-cover-dur">10:21</span>
+        </div>
+        <div class="tkm-video-body">
+          <div class="tkm-video-tags"><span class="tkm-tag">实用技巧</span><span class="tkm-tag tkm-tag--gray">小户型</span></div>
+          <h3>不砸墙、不买新柜，我让玄关多出两平米</h3>
+          <p>三个低成本改造动作，附上尺寸图与踩过的坑，可照抄。</p>
+          <div class="tkm-video-foot">
+            <span class="tkm-author"><span class="tkm-avatar" style="background:#b98b5e">郭</span>郭有方</span>
+            <span class="tkm-op">
+              <button data-like aria-label="点赞"><span>♡</span><i>389</i></button>
+              <button data-save aria-label="收藏"><span>♡</span></button>
+            </span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 专题企划 ============ -->
+<section class="tkm-section tkm-section--cream" id="tkm-topics">
+  <div class="tkm-wrap">
+    <div class="tkm-sec-head">
+      <span class="tkm-kicker">Series</span>
+      <h2>专题企划：把一个主题拍透</h2>
+      <p>挠脚心magic 编辑部联合创作者发起的长期企划，每个专题持续更新，欢迎在专题页留下你的想法。</p>
+    </div>
+    <div class="tkm-topic-grid">
+
+      <article class="tkm-topic-card">
+        <div class="tkm-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 240'%3E%3Crect width='320' height='240' fill='%23394a63'/%3E%3Ccircle cx='250' cy='60' r='36' fill='%23e8e0a8' opacity='.8'/%3E%3Cpath d='M0 180 L80 140 L160 175 L240 130 L320 170 L320 240 L0 240 Z' fill='%235d7590'/%3E%3Crect x='40' y='80' width='14' height='70' fill='%23222e40'/%3E%3C/svg%3E" alt="冬日城市专题封面：冷蓝夜色与街灯">
+        </div>
+        <div class="tkm-topic-info">
+          <h3>冬日治愈影像季</h3>
+          <p>十二支关于寒冷季节里的小温暖的短片，持续更新中。</p>
+          <div class="tkm-topic-status"><span><span class="tkm-dot"></span>已更新 8 集</span><span>更新中</span></div>
+        </div>
+      </article>
+
+      <article class="tkm-topic-card">
+        <div class="tkm-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 240'%3E%3Crect width='320' height='240' fill='%23f3e1c7'/%3E%3Ccircle cx='110' cy='100' r='52' fill='%23d9a86c' opacity='.8'/%3E%3Crect x='180' y='60' width='100' height='120' rx='10' fill='%23b5854f'/%3E%3Cpath d='M200 100 H260 M200 125 H245' stroke='%23f3e1c7' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E" alt="手艺人专题封面：米黄背景与木作器皿">
+        </div>
+        <div class="tkm-topic-info">
+          <h3>手艺人计划</h3>
+          <p>走近十位手作者的工作台，看一件东西被慢慢做出来。</p>
+          <div class="tkm-topic-status"><span><span class="tkm-dot"></span>已更新 5 集</span><span>更新中</span></div>
+        </div>
+      </article>
+
+      <article class="tkm-topic-card">
+        <div class="tkm-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 240'%3E%3Crect width='320' height='240' fill='%23e6eef5'/%3E%3Crect x='60' y='60' width='200' height='110' rx='12' fill='%23b9cfe0'/%3E%3Ccircle cx='110' cy='95' r='18' fill='%23ffffff'/%3E%3Cpath d='M80 145 L140 110 L200 145' stroke='%235d7590' stroke-width='7' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" alt="创作者幕后专题封面：浅蓝灰与画面元素">
+        </div>
+        <div class="tkm-topic-info">
+          <h3>镜头之外</h3>
+          <p>聚焦创作幕后：脚本、勘景、剪辑，那些没被拍进成片的时刻。</p>
+          <div class="tkm-topic-status"><span><span class="tkm-dot tkm-dot--warn"></span>已更新 3 集</span><span>更新中</span></div>
+        </div>
+      </article>
+
+      <article class="tkm-topic-card">
+        <div class="tkm-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 240'%3E%3Crect width='320' height='240' fill='%23f7e8e0'/%3E%3Cpath d='M0 190 Q80 140 160 180 T320 160 L320 240 L0 240 Z' fill='%23d99a7a' opacity='.8'/%3E%3Ccircle cx='230' cy='70' r='40' fill='%23f2c3a4'/%3E%3Cpath d='M60 90 Q100 60 140 95' stroke='%23c77d55' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" alt="在地文化专题封面：暖粉陶土色调与曲线">
+        </div>
+        <div class="tkm-topic-info">
+          <h3>在地散步指南</h3>
+          <p>不打卡、不赶路，跟着本地人的脚步走一遍他们的日常路线。</p>
+          <div class="tkm-topic-status"><span><span class="tkm-dot"></span>已更新 7 集</span><span>更新中</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 创作者矩阵 ============ -->
+<section class="tkm-section" id="tkm-creators">
+  <div class="tkm-wrap">
+    <div class="tkm-sec-head">
+      <span class="tkm-kicker">Creators</span>
+      <h2>创作者矩阵</h2>
+      <p>他们构成了挠脚心magic 的内容底色。每一位都经过内容规范培训，并与品牌签署原创首发约定。</p>
+    </div>
+    <div class="tkm-creator-grid">
+
+      <article class="tkm-creator-card">
+        <div class="tkm-creator-avatar" style="background:linear-gradient(135deg,#6f9e6a,#a8c79a)">林</div>
+        <h3>林知夏</h3>
+        <div class="tkm-creator-field">生活方式 · 阳台种植</div>
+        <p>把城市里的小空间拍出呼吸感，擅长用长时间跟拍记录变化。</p>
+        <div class="tkm-creator-data">
+          <div><b>86</b>作品</div><div><b>3.2万</b>粉丝</div><div><b>4.8</b>口碑</div>
+        </div>
+        <button class="tkm-btn tkm-btn--ghost tkm-btn--sm" data-creator="林知夏|生活方式 · 阳台种植|86 支原创短片，长期记录城市小空间种植，代表作《在六平米阳台上，我种活了一整个春天》。">查看主页</button>
+      </article>
+
+      <article class="tkm-creator-card">
+        <div class="tkm-creator-avatar" style="background:linear-gradient(135deg,#d97742,#f0a86b)">周</div>
+        <h3>周小满</h3>
+        <div class="tkm-creator-field">美食烹饪 · 家常菜</div>
+        <p>坚持「先讲原理再给步骤」，让新手也能照着做出稳定味道。</p>
+        <div class="tkm-creator-data">
+          <div><b>124</b>作品</div><div><b>5.6万</b>粉丝</div><div><b>4.9</b>口碑</div>
+        </div>
+        <button class="tkm-btn tkm-btn--ghost tkm-btn--sm" data-creator="周小满|美食烹饪 · 家常菜|124 支原创短片，擅长把复杂菜谱拆解为可复现的步骤，代表作《一锅到底的番茄牛腩》。">查看主页</button>
+      </article>
+
+      <article class="tkm-creator-card">
+        <div class="tkm-creator-avatar" style="background:linear-gradient(135deg,#c98aae,#e6a9c7)">沈</div>
+        <h3>沈南枝</h3>
+        <div class="tkm-creator-field">人物访谈 · 情感故事</div>
+        <p>习惯把镜头交给被拍摄者，让对话自己长出结构，不设标准答案。</p>
+        <div class="tkm-creator-data">
+          <div><b>52</b>作品</div><div><b>4.1万</b>粉丝</div><div><b>4.9</b>口碑</div>
+        </div>
+        <button class="tkm-btn tkm-btn--ghost tkm-btn--sm" data-creator="沈南枝|人物访谈 · 情感故事|52 支原创短片，专注代际对话与亲密关系题材，代表作《和我妈一起重看她二十岁那年的照片》。">查看主页</button>
+      </article>
+
+      <article class="tkm-creator-card">
+        <div class="tkm-creator-avatar" style="background:linear-gradient(135deg,#3c5a7a,#8fb3cd)">陈</div>
+        <h3>陈屿</h3>
+        <div class="tkm-creator-field">城市探索 · 纪实</div>
+        <p>不爱用旁白，相信现场声本身就足够讲故事，习惯清晨开工。</p>
+        <div class="tkm-creator-data">
+          <div><b>73</b>作品</div><div><b>2.8万</b>粉丝</div><div><b>4.7</b>口碑</div>
+        </div>
+        <button class="tkm-btn tkm-btn--ghost tkm-btn--sm" data-creator="陈屿|城市探索 · 纪实|73 支原创短片，聚焦城市中被忽略的时间与人物，代表作《清晨六点的江边》。">查看主页</button>
+      </article>
+
+      <article class="tkm-creator-card">
+        <div class="tkm-creator-avatar" style="background:linear-gradient(135deg,#b98b5e,#d9b183)">郭</div>
+        <h3>郭有方</h3>
+        <div class="tkm-creator-field">家居收纳 · 实用技巧</div>
+        <p>所有方案都自己先住三个月再拍，拒绝只适合拍照的样板间。</p>
+        <div class="tkm-creator-data">
+          <div><b>61</b>作品</div><div><b>3.5万</b>粉丝</div><div><b>4.8</b>口碑</div>
+        </div>
+        <button class="tkm-btn tkm-btn--ghost tkm-btn--sm" data-creator="郭有方|家居收纳 · 实用技巧|61 支原创短片，专注小户型改造与动线优化，代表作《不砸墙、不买新柜，我让玄关多出两平米》。">查看主页</button>
+      </article>
+
+      <article class="tkm-creator-card">
+        <div class="tkm-creator-avatar" style="background:linear-gradient(135deg,#435061,#7f93a8)">许</div>
+        <h3>许一鸣</h3>
+        <div class="tkm-creator-field">科技前沿 · 深度测评</div>
+        <p>只写长期使用之后还站得住的结论，测评周期最短一个月。</p>
+        <div class="tkm-creator-data">
+          <div><b>48</b>作品</div><div><b>2.1万</b>粉丝</div><div><b>4.6</b>口碑</div>
+        </div>
+        <button class="tkm-btn tkm-btn--ghost tkm-btn--sm" data-creator="许一鸣|科技前沿 · 深度测评|48 支原创短片，坚持长周期体验后再输出结论，代表作《我把桌面上的设备砍到只剩三件》。">查看主页</button>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 影像墙 ============ -->
+<section class="tkm-section tkm-section--cream" id="tkm-wall">
+  <div class="tkm-wrap">
+    <div class="tkm-sec-head">
+      <span class="tkm-kicker">Gallery</span>
+      <h2>影像墙：用画面说话</h2>
+      <p>来自创作者随手拍下的瞬间，未经统一调色，保留各自的温度与颗粒感。</p>
+    </div>
+    <div class="tkm-wall">
+      <figure class="tkm-wall-item tkm-wall-item--big">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 400'%3E%3Crect width='500' height='400' fill='%23f0dcc2'/%3E%3Ccircle cx='150' cy='140' r='80' fill='%23d9a86c' opacity='.7'/%3E%3Crect x='260' y='120' width='180' height='200' rx='14' fill='%23a87a52' opacity='.8'/%3E%3Cpath d='M300 190 H400 M300 230 H380' stroke='%23f0dcc2' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E" alt="影像墙作品：木桌与手作陶器暖光特写">
+        <figcaption>手作日常 · 一只碗的诞生</figcaption>
+      </figure>
+      <figure class="tkm-wall-item">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 200'%3E%3Crect width='260' height='200' fill='%23cfe0ee'/%3E%3Cpath d='M0 150 L70 110 L140 145 L200 105 L260 140 L260 200 L0 200 Z' fill='%238fb3cd'/%3E%3Ccircle cx='200' cy='50' r='24' fill='%23f7f4e0'/%3E%3C/svg%3E" alt="影像墙作品：蓝灰远山与清晨薄雾">
+        <figcaption>清晨六点 · 江边</figcaption>
+      </figure>
+      <figure class="tkm-wall-item">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 200'%3E%3Crect width='260' height='200' fill='%23f6e0e8'/%3E%3Ccircle cx='130' cy='105' r='55' fill='%23e6a9c7' opacity='.8'/%3E%3Ccircle cx='130' cy='105' r='28' fill='%23f6e0e8'/%3E%3C/svg%3E" alt="影像墙作品：粉色圆形抽象构图">
+        <figcaption>情绪练习 · 粉</figcaption>
+      </figure>
+      <figure class="tkm-wall-item tkm-wall-item--wide">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 200'%3E%3Crect width='500' height='200' fill='%23e8f0e2'/%3E%3Cpath d='M0 150 Q120 90 240 140 T500 120 L500 200 L0 200 Z' fill='%236f9e6a' opacity='.7'/%3E%3Ccircle cx='380' cy='60' r='30' fill='%23f5d76e' opacity='.9'/%3E%3C/svg%3E" alt="影像墙作品：绿色山丘与草地线条">
+        <figcaption>阳台春天 · 种植记录</figcaption>
+      </figure>
+      <figure class="tkm-wall-item">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 200'%3E%3Crect width='260' height='200' fill='%23f7e8e0'/%3E%3Crect x='40' y='50' width='70' height='110' rx='8' fill='%23c77d55' opacity='.8'/%3E%3Crect x='130' y='80' width='90' height='80' rx='8' fill='%23d99a7a' opacity='.7'/%3E%3C/svg%3E" alt="影像墙作品：暖陶土色几何块面">
+        <figcaption>在地散步 · 老街墙面</figcaption>
+      </figure>
+      <figure class="tkm-wall-item">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 200'%3E%3Crect width='260' height='200' fill='%23e3e8f0'/%3E%3Ccircle cx='130' cy='100' r='50' fill='%23a3b1c2' opacity='.7'/%3E%3Cpath d='M50 160 H210' stroke='%235d7590' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E" alt="影像墙作品：蓝灰圆形与水平线构图">
+        <figcaption>桌面整理 · 三个月后</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 评价 ============ -->
+<section class="tkm-section" id="tkm-reviews">
+  <div class="tkm-wrap">
+    <div class="tkm-sec-head">
+      <span class="tkm-kicker">Voices</span>
+      <h2>他们这样评价挠脚心magic</h2>
+      <p>来自社区用户与合作伙伴的真实反馈，未经删改，仅做匿名处理。</p>
+    </div>
+    <div class="tkm-review-grid">
+
+      <article class="tkm-review">
+        <div class="tkm-review-head">
+          <span class="tkm-avatar" style="background:#6f9e6a">阿</span>
+          <div><b>阿柚</b><span>社区用户 · 关注 2 年</span></div>
+        </div>
+        <p>我最喜欢的一点是这里没有那种催你看完的压力。封面写得很诚实，标题不夸张，点进去和预期基本一致，久了就会习惯先来这里找片子。</p>
+        <div class="tkm-review-stars">★★★★★</div>
+      </article>
+
+      <article class="tkm-review">
+        <div class="tkm-review-head">
+          <span class="tkm-avatar" style="background:#d97742">老</span>
+          <div><b>老周的邻居</b><span>社区用户</span></div>
+        </div>
+        <p>番茄牛腩那支我照着做了两次，第二次终于没糊锅。作者把失败原因讲得很细，这种内容对新手真的友好，希望多出点这类教程。</p>
+        <div class="tkm-review-stars">★★★★★</div>
+      </article>
+
+      <article class="tkm-review">
+        <div class="tkm-review-head">
+          <span class="tkm-avatar" style="background:#3c5a7a">K</span>
+          <div><b>K先生</b><span>合作品牌方</span></div>
+        </div>
+        <p>和挠脚心magic 合作过一期专题，从选题沟通到成片交付节奏都很稳。他们对品牌露出有明确边界，这点我们很认可，后续还会继续合作。</p>
+        <div class="tkm-review-stars">★★★★★</div>
+      </article>
+
+      <article class="tkm-review">
+        <div class="tkm-review-head">
+          <span class="tkm-avatar" style="background:#c98aae">小</span>
+          <div><b>小满不满</b><span>社区用户 · 投稿 3 次</span></div>
+        </div>
+        <p>作为投稿者，最直接的感受是反馈很具体。不是一句「不太合适」就结束了，编辑会告诉我问题在节奏还是开头，这点很难得。</p>
+        <div class="tkm-review-stars">★★★★☆</div>
+      </article>
+
+      <article class="tkm-review">
+        <div class="tkm-review-head">
+          <span class="tkm-avatar" style="background:#b98b5e">一</span>
+          <div><b>一只慢乌龟</b><span>社区用户</span></div>
+        </div>
+        <p>影像墙是我每周会翻一遍的地方。有些作品画质不算顶级，但情绪很真，能看出拍的人是真的想记录，而不是为了数据。</p>
+        <div class="tkm-review-stars">★★★★★</div>
+      </article>
+
+      <article class="tkm-review">
+        <div class="tkm-review-head">
+          <span class="tkm-avatar" style="background:#435061">林</span>
+          <div><b>林间有风</b><span>社区用户</span></div>
+        </div>
+        <p>用了一段时间，感觉这个平台更像个可以慢慢逛的小店，而不是人挤人的商场。搜索有筛选提示这一点很加分，找东西不费劲。</p>
+        <div class="tkm-review-stars">★★★★☆</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 企业动态 + 合作 ============ -->
+<section class="tkm-section tkm-section--cream" id="tkm-news">
+  <div class="tkm-wrap">
+    <div class="tkm-sec-head">
+      <span class="tkm-kicker">Newsroom</span>
+      <h2>企业动态与官方发布</h2>
+      <p>关于挠脚心magic 的运营进展、内容规范与活动信息，均在此处统一发布。</p>
+    </div>
+    <div class="tkm-news-grid">
+      <div class="tkm-news-list">
+        <article class="tkm-news-item">
+          <div class="tkm-news-date"><b>11.16</b>2026</div>
+          <div>
+            <h3>「冬日治愈影像季」专题正式上线，首批 8 集已更新</h3>
+            <p>本专题由编辑部联合 6 位创作者共同策划，围绕寒冷季节里的温暖瞬间展开，后续每周更新两集，欢迎在专题页留下你的观后感。</p>
+          </div>
+        </article>
+        <article class="tkm-news-item">
+          <div class="tkm-news-date"><b>11.12</b>2026</div>
+          <div>
+            <h3>创作者扶持计划第二期开放报名，投稿通道 11 月 30 日关闭</h3>
+            <p>本期计划面向新锐创作者开放 40 个名额，提供选题诊断、拍摄指导与联合宣发资源。报名需提交一支原创短片与一份创作说明。</p>
+          </div>
+        </article>
+        <article class="tkm-news-item">
+          <div class="tkm-news-date"><b>11.05</b>2026</div>
+          <div>
+            <h3>官方发布内容规范 v2.3，新增封面与字幕标注指引</h3>
+            <p>本次更新细化了封面信息真实性与字幕来源标注要求，同时补充了素材授权说明模板，创作者可在帮助中心下载对照使用。</p>
+          </div>
+        </article>
+        <article class="tkm-news-item">
+          <div class="tkm-news-date"><b>10.28</b>2026</div>
+          <div>
+            <h3>「镜头之外」专题第三集上线，聚焦剪辑台上的取舍</h3>
+            <p>本集记录了三位创作者在剪辑阶段的真实犹豫，包括被删掉的镜头与放弃的叙事线，适合对幕后流程感兴趣的观众。</p>
+          </div>
+        </article>
+      </div>
+      <aside class="tkm-partner-box">
+        <h3>合作品牌与伙伴</h3>
+        <p style="font-size:13px;color:var(--tkm-ink-soft);margin-bottom:16px">我们与伙伴共同探索内容表达的边界，合作范围涵盖专题共创、素材支持与线下活动。</p>
+        <div class="tkm-partners">
+          <div class="tkm-partner">晨光影像实验室</div>
+          <div class="tkm-partner">南山手作协会</div>
+          <div class="tkm-partner">江畔书店</div>
+          <div class="tkm-partner">小满厨房</div>
+          <div class="tkm-partner">拾光文创</div>
+          <div class="tkm-partner">慢岛咖啡</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ + 联系 ============ -->
+<section class="tkm-section" id="tkm-help">
+  <div class="tkm-wrap">
+    <div class="tkm-sec-head">
+      <span class="tkm-kicker">Support</span>
+      <h2>帮助中心与联系方式</h2>
+      <p>关于投稿、版权与内容规范的常见问题，点击展开查看。若仍未解决，欢迎直接联系官方团队。</p>
+    </div>
+    <div class="tkm-faq-grid">
+      <details open>
+        <summary>如何向挠脚心magic 投稿？</summary>
+        <p>点击页面中的「投稿报名」按钮填写表单，提交作品链接与创作说明即可。编辑部会在 7 个工作日内给出反馈，通过后会进入选题沟通环节。</p>
+      </details>
+      <details>
+        <summary>平台对作品画质有硬性要求吗？</summary>
+        <p>我们希望成片满足高清标准，但更看重内容表达是否成立。手机拍摄的优秀作品同样欢迎，只需保证画面稳定、声音清晰、字幕准确。</p>
+      </details>
+      <details>
+        <summary>投稿作品的版权归谁？</summary>
+        <p>版权始终归创作者所有。挠脚心magic 会在获得授权后于站内展示，并明确标注原创信息；如需商业合作，会另行签署协议并单独沟通。</p>
+      </details>
+      <details>
+        <summary>为什么我的作品没有通过审核？</summary>
+        <p>常见原因包括画面与标题不符、素材来源不明、字幕信息错误等。反馈邮件中会说明具体问题，修改后可再次提交，不限制次数。</p>
+      </details>
+      <details>
+        <summary>可以使用站内素材进行二次创作吗？</summary>
+        <p>品牌公开素材库中的内容可用于非商业创作，需注明来源并保留水印。商业用途请先联系官方获取书面授权。</p>
+      </details>
+      <details>
+        <summary>如何申请成为签约创作者？</summary>
+        <p>在站内累计发布 3 支以上原创短片、口碑稳定且符合内容规范的创作者，可在个人主页提交签约申请，编辑部会安排一次线上沟通。</p>
+      </details>
+      <details>
+        <summary>品牌合作有哪些形式？</summary>
+        <p>目前开放专题共创、内容定制与线下活动联动三种形式。可在联系我们中说明合作意向与预算范围，我们会安排对应的负责人对接。</p>
+      </details>
+      <details>
+        <summary>发现内容问题怎么反馈？</summary>
+        <p>可在作品页点击「反馈」按钮提交说明，或通过下方邮箱联系。我们承诺在 48 小时内响应，并对反馈人信息严格保密。</p>
+      </details>
+    </div>
+
+    <div class="tkm-contact">
+      <div>
+        <h2>和挠脚心magic 一起，把好东西拍出来</h2>
+        <p>无论你是创作者、品牌方还是单纯想聊聊的观众，我们都愿意认真听。</p>
+        <p>官方邮箱：hello@naojiaoxin-magic.studio　｜　工作时间：周一至周五 10:00–19:00</p>
+        <div class="tkm-contact-actions">
+          <button class="tkm-btn tkm-btn--primary" id="tkmSubmitOpen2">投稿报名</button>
+          <button class="tkm-btn tkm-btn--ghost" data-share>分享本站</button>
+        </div>
+      </div>
+      <div class="tkm-contact-info">
+        <ul>
+          <li><span>品牌名称</span><b>挠脚心magic</b></li>
+          <li><span>内容方向</span><b>治愈 · 生活 · 趣味</b></li>
+          <li><span>运营主体</span><b>挠脚心magic 内容工作室</b></li>
+          <li><span>合作邮箱</span><b>hello@naojiaoxin-magic.studio</b></li>
+          <li><span>更新频率</span><b>每周三、周六</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="tkm-footer">
+  <div class="tkm-wrap">
+    <div class="tkm-footer-grid">
+      <div class="tkm-footer-brand">
+        <div class="tkm-logo" style="font-size:17px">
+          <span class="tkm-logo-mark">挠</span>
+          <span>挠脚心magic<small>OFFICIAL SITE</small></span>
+        </div>
+        <p>挠脚心magic 官方网站，专注轻松治愈系原创影像，深耕趣味生活垂直领域，为创作者与企业搭建值得信赖的内容生态。平台持续运营中，坚持正版、高清、专业的选片标准。</p>
+      </div>
+      <div>
+        <h4>内容分区</h4>
+        <ul>
+          <li><a href="#tkm-focus">焦点内容</a></li>
+          <li><a href="#tkm-flow">热门影像</a></li>
+          <li><a href="#tkm-topics">专题企划</a></li>
+          <li><a href="#tkm-wall">影像墙</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于品牌</h4>
+        <ul>
+          <li><a href="#tkm-about">品牌解析</a></li>
+          <li><a href="#tkm-creators">创作者矩阵</a></li>
+          <li><a href="#tkm-news">企业动态</a></li>
+          <li><a href="#tkm-reviews">用户评价</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>支持与联系</h4>
+        <ul>
+          <li><a href="#tkm-help">帮助中心</a></li>
+          <li><a href="#tkm-help">投稿报名</a></li>
+          <li><a href="#tkm-help">品牌合作</a></li>
+          <li><button data-share style="font-size:13px;color:inherit">分享本站</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tkm-footer-bottom">
+      <span>© 2026 挠脚心magic 内容工作室 版权所有 · 官方网站持续运营中</span>
+      <span>原创内容受保护 · 品牌备案信息：挠脚心magic 品牌运营中心</span>
+    </div>
+  </div>
+</footer>
+
+<button class="tkm-top" id="tkmTopBtn" aria-label="回到顶部">↑</button>
+<div class="tkm-toast" id="tkmToast" role="status" aria-live="polite"></div>
+
+<div class="tkm-modal" id="tkmModal" role="dialog" aria-modal="true" aria-labelledby="tkmModalTitle">
+  <div class="tkm-modal-box">
+    <button class="tkm-modal-close" id="tkmModalClose" aria-label="关闭弹窗">×</button>
+    <h3 id="tkmModalTitle">投稿报名</h3>
+    <p id="tkmModalDesc">留下你的联系方式与作品简介，编辑部会在 7 个工作日内回复。</p>
+    <div id="tkmModalFields">
+      <input type="text" id="tkmFormName" placeholder="你的昵称或创作者名">
+      <input type="email" id="tkmFormMail" placeholder="联系邮箱">
+      <textarea id="tkmFormMsg" rows="3" placeholder="简单介绍你的作品或合作意向"></textarea>
+    </div>
+    <button class="tkm-btn tkm-btn--primary" id="tkmFormSend" style="width:100%;justify-content:center">提交</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 公告轮播 ---------- */
+  var noticeItems = document.querySelectorAll('.tkm-notice-item');
+  var noticeIdx = 0;
+  if(noticeItems.length > 1){
+    setInterval(function(){
+      noticeItems[noticeIdx].classList.remove('is-on');
+      noticeIdx = (noticeIdx + 1) % noticeItems.length;
+      noticeItems[noticeIdx].classList.add('is-on');
+    }, 4200);
+  }
+
+  /* ---------- Toast ---------- */
+  var toast = document.getElementById('tkmToast');
+  var toastTimer = null;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('is-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('is-on'); }, 2200);
+  }
+
+  /* ---------- 移动端导航 ---------- */
+  var burger = document.getElementById('tkmBurger');
+  var mobileNav = document.getElementById('tkmMobileNav');
+  burger.addEventListener('click', function(){
+    var on = mobileNav.classList.toggle('is-on');
+    burger.classList.toggle('is-on', on);
+    burger.setAttribute('aria-expanded', on ? 'true' : 'false');
+  });
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mobileNav.classList.remove('is-on');
+      burger.classList.remove('is-on');
+      burger.setAttribute('aria-expanded','false');
+    });
+  });
+
+  /* ---------- 搜索反馈 ---------- */
+  var searchInput = document.getElementById('tkmSearchInput');
+  var searchTip = document.getElementById('tkmSearchTip');
+  var searchData = [
+    '冬日治愈影像季 · 专题',
+    '在六平米阳台上，我种活了一整个春天',
+    '一锅到底的番茄牛腩，新手也能不翻车',
+    '林知夏 · 生活方式创作者',
+    '沈南枝 · 人物访谈创作者',
+    '手艺人计划 · 专题企划',
+    '不砸墙、不买新柜，我让玄关多出两平米'
+  ];
+  function doSearch(){
+    var kw = (searchInput.value || '').trim();
+    if(!kw){
+      searchTip.innerHTML = '试试搜索：治愈、手作、收纳、创作者';
+      searchTip.classList.add('is-on');
+      return;
+    }
+    var hit = searchData.filter(function(s){ return s.indexOf(kw) > -1; });
+    if(hit.length){
+      searchTip.innerHTML = '找到 ' + hit.length + ' 条相关内容：<br>' + hit.slice(0,3).map(function(s){ return '· ' + s; }).join('<br>');
+    }else{
+      searchTip.innerHTML = '暂未找到「' + kw + '」相关内容，可换个关键词，比如「治愈」「手作」「收纳」。';
+    }
+    searchTip.classList.add('is-on');
+  }
+  searchInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ doSearch(); }
+  });
+  searchInput.addEventListener('focus', function(){
+    if(!searchTip.textContent){
+      searchTip.innerHTML = '试试搜索：治愈、手作、收纳、创作者';
+    }
+    searchTip.classList.add('is-on');
+  });
+  searchInput.addEventListener('input', function(){
+    if(!searchInput.value){ searchTip.classList.remove('is-on'); }
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.tkm-search')){ searchTip.classList.remove('is-on'); }
+  });
+
+  /* ---------- 点赞 / 收藏 ---------- */
+  document.querySelectorAll('[data-like]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var icon = btn.querySelector('span');
+      var num = btn.querySelector('i');
+      var n = parseInt(num.textContent, 10) || 0;
+      if(btn.classList.contains('is-liked')){
+        btn.classList.remove('is-liked');
+        icon.textContent = '♡';
+        num.textContent = Math.max(0, n - 1);
+      }else{
+        btn.classList.add('is-liked');
+        icon.textContent = '♥';
+        num.textContent = n + 1;
+        showToast('已点赞，感谢你的支持');
+      }
+    });
+  });
+  document.querySelectorAll('[data-save]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var icon = btn.querySelector('span');
+      if(btn.classList.contains('is-saved')){
+        btn.classList.remove('is-saved');
+        icon.textContent = '♡';
+        showToast('已取消收藏');
+      }else{
+        btn.classList.add('is-saved');
+        icon.textContent = '♥';
+        showToast('已收藏到我的清单');
+      }
+    });
+  });
+
+  /* ---------- 数字滚动 ---------- */
+  var counted = false;
+  function runCount(){
+    if(counted) return;
+    counted = true;
+    document.querySelectorAll('[data-count]').forEach(function(el){
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var cur = 0;
+      var step = Math.max(1, Math.floor(target / 48));
+      var timer = setInterval(function(){
+        cur += step;
+        if(cur >= target){ cur = target; clearInterval(timer); }
+        el.textContent = cur;
+      }, 22);
+    });
+  }
+  if('IntersectionObserver' in window){
+    var statBox = document.querySelector('.tkm-hero-stats');
+    var ob = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ runCount(); ob.disconnect(); } });
+    }, {threshold:.3});
+    if(statBox) ob.observe(statBox);
+  }else{
+    runCount();
+  }
+
+  /* ---------- 弹窗 ---------- */
+  var modal = document.getElementById('tkmModal');
+  var modalTitle = document.getElementById('tkmModalTitle');
+  var modalDesc = document.getElementById('tkmModalDesc');
+  var modalFields = document.getElementById('tkmModalFields');
+  var modalSend = document.getElementById('tkmFormSend');
+
+  function openModal(title, desc, withForm){
+    modalTitle.textContent = title;
+    modalDesc.textContent = desc;
+    modalFields.style.display = withForm ? 'block' : 'none';
+    modalSend.style.display = withForm ? 'inline-flex' : 'none';
+    modal.classList.add('is-on');
+  }
+  function closeModal(){ modal.classList.remove('is-on'); }
+
+  document.getElementById('tkmModalClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+  function bindSubmit(id){
+    var el = document.getElementById(id);
+    if(!el) return;
+    el.addEventListener('click', function(){
+      openModal('投稿报名', '留下你的联系方式与作品简介，编辑部会在 7 个工作日内回复。', true);
+    });
+  }
+  bindSubmit('tkmSubmitOpen');
+  bindSubmit('tkmSubmitOpen2');
+
+  modalSend.addEventListener('click', function(){
+    var name = document.getElementById('tkmFormName').value.trim();
+    var mail = document.getElementById('tkmFormMail').value.trim();
+    if(!name || !mail){
+      showToast('请填写昵称与联系邮箱');
+      return;
+    }
+    if(mail.indexOf('@') === -1){
+      showToast('邮箱格式好像不太对');
+      return;
+    }
+    closeModal();
+    showToast('提交成功，感谢你的信任');
+  });
+
+  /* ---------- 创作者弹窗 ---------- */
+  document.querySelectorAll('[data-creator]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var parts = btn.getAttribute('data-creator').split('|');
+      openModal(parts[0], parts[2] || '这位创作者暂无更多简介。', false);
+      modalDesc.textContent = (parts[1] ? '擅长领域：' + parts[1] + '　' : '') + (parts[2] || '');
+    });
+  });
+
+  /* ---------- 分享 ---------- */
+  document.querySelectorAll('[data-share]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var text = '挠脚心magic 官方网站 · 轻松治愈系原创影像内容社区';
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text + ' ' + location.href).then(function(){
+          showToast('链接已复制，可分享给朋友');
+        }).catch(function(){
+          showToast('分享内容：' + text);
+        });
+      }else{
+        showToast('分享内容：' + text);
+      }
+    });
+  });
+
+  /* ---------- 回到顶部 ---------- */
+  var topBtn = document.getElementById('tkmTopBtn');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 420){ topBtn.classList.add('is-on'); }
+    else{ topBtn.classList.remove('is-on'); }
+  });
+  topBtn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* ---------- 导航高亮 ---------- */
+  var sections = document.querySelectorAll('main section[id]');
+  var navLinks = document.querySelectorAll('.tkm-nav a');
+  if('IntersectionObserver' in window){
+    var navOb = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var id = '#' + en.target.id;
+          navLinks.forEach(function(a){
+            a.classList.toggle('tkm-nav-active', a.getAttribute('href') === id);
+          });
+        }
+      });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    sections.forEach(function(s){ navOb.observe(s); });
+  }
+
+})();
+</script>
+</body>
+            </html>
